@@ -8,15 +8,16 @@
     <style>
         #template{
             display:grid;
-            padding:10px;
-            grid-gap :5px;
+            padding:5px;
+            
+            grid-gap :2px;
           
         }
       
         #euro{
-            height:500px;
-            width:330px;
-            padding:2%;
+            height:400px;
+            width:300px;
+            padding:3%;
             float:left;
             grid-area: e;
         }
@@ -27,21 +28,21 @@
             background-color: rgb(176, 234, 236);
         }
         #euro>div:nth-child(1){
-            height:55%;
+            height:75%;
             background-color:  rgb(176, 234, 236);
              border-radius: 5%;
             background-image: url("https://via.placeholder.com/400x300");
             background-repeat: no-repeat;
         }
         #euro>div:nth-child(2){
-            height: 40%;
+            height: 25%;
            
         }
         #ahm{
             grid-area: a;
-            height:500px;
+            height:400px;
             width:300px;
-            padding:2%;
+            padding:3%;
             float:left;
         }
         #ahm>div{
@@ -51,21 +52,21 @@
             background-color: rgb(176, 234, 236);
         }
         #ahm>div:nth-child(1){
-            height:55%;
+            height:75%;
             background-color:  rgb(176, 234, 236);
              border-radius: 5%;
             background-image: url("https://via.placeholder.com/400x300");
             background-repeat: no-repeat;
         }
         #ahm>div:nth-child(2){
-            height: 40%;
+            height: 25%;
            
         }
         #xxl{
             grid-area: x;
-            height:500px;
-            width:330px;
-            padding:2%;
+            height:400px;
+            width:300px;
+            padding:3%;
             float:left;
         }
         #xxl>div{
@@ -75,110 +76,196 @@
             background-color: rgb(176, 234, 236);
         }
         #xxl>div:nth-child(1){
-            height:55%;
+            height:75%;
             background-color:  rgb(176, 234, 236);
              border-radius: 5%;
             background-image: url("https://via.placeholder.com/400x300");
             background-repeat: no-repeat;
         }
         #xxl>div:nth-child(2){
-            height: 40%;
+            height: 25%;
            
         }
-        #l{
-            grid-area: l;
-            height:500px;
-            width:330px;
+        #l2{
+            grid-area: l2;
+            height:140px;
+            width:300px;
             padding:2%;
-           
+            float:left;
         }
-        #l>div{
+        #l2>div{
             padding: 2%;
             height:95%;
             width:85%;
             background-color: rgb(176, 234, 236);
         }
-        #l>div:nth-child(1){
-            height:55%;
-            background-color:  rgb(176, 234, 236);
-             border-radius: 5%;
-            background-image: url("https://via.placeholder.com/400x300");
-            background-repeat: no-repeat;
+        #l3{
+            grid-area: l3;
+            height:140px;
+            width:300px;
+            padding:2%;
+            float:left;
         }
-        #l>div:nth-child(2){
-            height: 40%;
-           
+        #l3>div{
+            padding: 2%;
+            height:95%;
+            width:85%;
+            background-color: rgb(176, 234, 236);
         }
+        #l1{
+            grid-area: l1;
+            height:140px;
+            width:300px;
+            padding:2%;
+            float:left;
+        }
+        #l1>div{
+            padding: 2%;
+            height:95%;
+            width:85%;
+            background-color: rgb(176, 234, 236);
+        }
+        #l4{
+            grid-area: l4;
+            height:140px;
+            width:300px;
+            padding:2%;
+            float:left;
+        }
+        #l4>div{
+            padding: 2%;
+            height:95%;
+            width:85%;
+            background-color: rgb(176, 234, 236);
+        }
+        #l5{
+            grid-area: l5;
+            height:140px;
+            width:300px;
+            padding:2%;
+            float:left;
+        }
+        #l5>div{
+            padding: 2%;
+            height:95%;
+            width:85%;
+            background-color: rgb(176, 234, 236);
+        }
+        #l6{
+            grid-area: l6;
+            height:140px;
+            width:300px;
+            padding:2%;
+            float:left;
+        }
+        #l6>div{
+            padding: 2%;
+            height:95%;
+            width:85%;
+            background-color: rgb(176, 234, 236);
+        }
+       
         @media screen and (max-width:600px){
             #template{
                 grid-template: "x"
                                 "e"
-                                "a";
+                                "a"
+                                 "l1"
+                                 "l2"
+                                 "l3"
+                                 "l4"
+                                 "l5"
+                                 "l6";
             }
         }
         @media screen and (min-width:600px){
             #template{
                 grid-template: "a x"
-                                "e e" ;
+                                "e e" 
+                                "l1 l2"
+                                "l3 l4"
+                                "l5 l6";
                                 
             }
         }
         @media screen and (min-width:992px){
             #template{
-                grid-template: "e a x";
+                grid-template: "e   a   x"
+                                "l1 l2 l3"
+                                "l3 l4 l5";
             }
         }
     </style>
 </head>
 <body>
     <div id="template">
-        <div id="top">
+      
        <div id="euro">
         <div ></div>
         <div>
-        <div><p>euro</p></div>
-        <div><h2>Chemical Enginnering</h></div>
+        <div><p>Euro</p></div>
+        <div><h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h4></div>
        </div>
        </div>
        <div id="ahm">
         <div ></div>
         <div>
-        <div><p>ahm</p></div>
-        <div><h2>Chemical Enginnering</h></div>
+        <div><p>Ahm</p></div>
+        <div><h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h4></div>
        </div>
        </div>
        <div id="xxl">
         <div ></div>
         <div>
         <div><p>XXL</p></div>
-        <div><h2>Chemical Enginnering</h></div>
+        <div><h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h4></div>
+       </div>
+       </div>
+    
+       <div id="l1">
+        
+        <div>
+        <div><h3>Lorem ipsum dolor sit amet</h3></div>
+        <div><h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h4></div>
+       </div>
+       </div>
+       <div id="l2">
+        
+        <div>
+            <div><h3>Lorem ipsum dolor sit amet</h3></div>
+            <div><h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h4></div>
+       </div>
+       </div>
+       <div id="l3">
+        
+        <div>
+            <div><h3>Lorem ipsum dolor sit amet</h3></div>
+            <div><h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h4></div>
+       </div>
+       </div>
+       <div id="l4">
+        
+        <div>
+            <div><h3>Lorem ipsum dolor sit amet</h3></div>
+            <div><h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h4></div>
+       </div>
+       </div>
+       <div id="l5">
+        
+        <div>
+            <div><h3>Lorem ipsum dolor sit amet</h3></div>
+            <div><h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h4></div>
+       </div>
+       </div>
+       <div id="l6">
+        
+        <div>
+            <div><h3>Lorem ipsum dolor sit amet</h3></div>
+            <div><h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h4></div>
        </div>
        </div>
     </div>
-    <div id="top">
-       <div id="l">
-        
-        <div>
-        <div><p>XXL</p></div>
-        <div><h2>Chemical Enginnering</h></div>
-       </div>
-       </div>
-       <div id="l">
-        
-        <div>
-        <div><p>XXL</p></div>
-        <div><h2>Chemical Enginnering</h></div>
-       </div>
-       </div>
-       <div id="l">
-        
-        <div>
-        <div><p>XXL</p></div>
-        <div><h2>Chemical Enginnering</h></div>
-       </div>
-       </div>
-    </div>
-    </div>
+    
     
 </body>
 </html>
