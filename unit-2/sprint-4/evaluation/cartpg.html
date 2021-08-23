@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product page</title>
+    <style>
+    #main{
+        display:grid;
+        grid-template-columns: 20% 20% 20% 20%;
+      
+        grid-gap:5%;
+    }
+    #main div{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+    #imgg{
+        width:45%;
+    }
+    </style>
+</head>
+<body>
+<h1>Products </h1>
+<form onsubmit="check()">
+    <label>Code</label>
+    <input type="text" id="code" placeholder="Enter code">
+    <input type="submit">
+</form>
+    <script>
+
+
+    var cartd=JSON.parse(localStorage.getItem("cart_it"));
+   var main_d=document.createElement('div');
+    cartd.forEach(element => {
+        var div=document.createElement('div');
+       div.setAttribute('id',"main");
+       var n=document.createElement('p');
+       var p=document.createElement('p');
+       var i=document.createElement('img');
+     
+       n.innerHTML=element.name;
+       p.innerHTML=element.price;
+       i.setAttribute('id',"imgg");
+       i.setAttribute("src",element.url);
+       div.append(i,n,p);
+      document.body.appendChild(div);
+    });
+
+   </script>
+</body>
+</html>   
