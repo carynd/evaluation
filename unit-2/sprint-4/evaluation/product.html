@@ -5,24 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product page</title>
+    <style>
+    #main{
+        display:grid;
+        grid-template-columns: 30% 30% 30%;
+      
+        grid-gap: 7%;
+    }
+    #main div{
+        display: flex;
+        flex-direction: column;
+    }
+    #imgg{
+        width:30%;
+    }
+    </style>
 </head>
 <body>
+<h1>Products </h1>
     <script>
     var products=[
     {
-    name="ring",
-    price="23000",
-    url="https://staticimg.titan.co.in/Mia/Catalog/552812FJXAE00_3.jpg"
+    name:"ring",
+    price:"23000",
+    url:"https://staticimg.titan.co.in/Mia/Catalog/552812FJXAE00_3.jpg"
     },
-    name="chain",
-    price="27000",
-    url="https://staticimg.titan.co.in/Mia/Catalog/552818CDSAE00_1.jpg"
+    {
+    name:"chain",
+    price:"27000",
+    url:"https://staticimg.titan.co.in/Mia/Catalog/552818CDSAE00_1.jpg"
     },
-    name="earrings",
-    price="17000",
-    url="https://staticimg.titan.co.in/Mia/Catalog/552812DSPAAAPL_2.jpg"
+    {
+    name:"earrings",
+    price:"17000",
+    url:"https://staticimg.titan.co.in/Mia/Catalog/552812DSPAAAPL_2.jpg"
     }
     ];
+    var pr=JSON.stringify(products);
+    localStorage.setItem("cat_pro",pr);
+
+
+    var prr=JSON.parse(localStorage.getItem("cat_pro"));
+    prr.forEach(element => {
+       var div=document.createElement('div');
+       div.setAttribute('id',"main");
+       var n=document.createElement('p');
+       var p=document.createElement('p');
+       var i=document.createElement('img');
+       n.innerHTML=element.name;
+       p.innerHTML=element.price;
+       i.setAttribute('id',imgg);
+       i.setAttribute("src",element.url);
+       div.append(i,n,p);
+        document.body.appendChild(div);
+    });
 </script>
 </body>
 </html>
