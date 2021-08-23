@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product page</title>
+    <title>cart page</title>
     <style>
     #main{
         display:grid;
@@ -24,14 +24,16 @@
 </head>
 <body>
 <h1>Products </h1>
-<form onsubmit="check()">
+<form onsubmit="check(event)">
     <label>Code</label>
     <input type="text" id="code" placeholder="Enter code">
     <input type="submit">
 </form>
+<h3 id="tot"></h3>
+<h3 id="ntt"></h3>
     <script>
 
-
+var total=0;
     var cartd=JSON.parse(localStorage.getItem("cart_it"));
    var main_d=document.createElement('div');
     cartd.forEach(element => {
@@ -43,11 +45,33 @@
      
        n.innerHTML=element.name;
        p.innerHTML=element.price;
+     total=total+Number(element.price);
        i.setAttribute('id',"imgg");
        i.setAttribute("src",element.url);
        div.append(i,n,p);
       document.body.appendChild(div);
     });
+ 
+  //  var newt=total;
+ //   var n=document.getElementById('ntt');
+  //   var nt=document.createElement("p");
+ function check(event){
+  
+     var c=document.getElementById('code').value;
+    console.log(c);
+     if(c=="masai30"){
+         total=0.7*Number(total);
+         console.log(total);
+    
+     }
+    
+ }
+   
+ console.log(total);
+    var t=document.getElementById("tot");
+    var n=document.createElement('p');
+    n.innerHTML="Total= "+total;
+    t.appendChild(n);
 
    </script>
 </body>
