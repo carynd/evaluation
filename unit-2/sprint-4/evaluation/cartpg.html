@@ -24,7 +24,7 @@
 </head>
 <body>
 <h1>Products </h1>
-<form onsubmit="check(event)">
+<form onsubmit="check()">
     <label>Code</label>
     <input type="text" id="code" placeholder="Enter code">
     <input type="submit">
@@ -52,10 +52,11 @@ var total=0;
       document.body.appendChild(div);
     });
  
-  //  var newt=total;
- //   var n=document.getElementById('ntt');
-  //   var nt=document.createElement("p");
- function check(event){
+    var newt=total;
+  var n=document.getElementById('ntt');
+     var nt=document.createElement("p");
+     n.appendChild(nt);
+ function check(){
   
      var c=document.getElementById('code').value;
     console.log(c);
@@ -64,8 +65,10 @@ var total=0;
          console.log(total);
     
      }
+    nt.innerHTML=total;
     
  }
+
    
  console.log(total);
     var t=document.getElementById("tot");
