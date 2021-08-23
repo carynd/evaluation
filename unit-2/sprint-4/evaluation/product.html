@@ -8,16 +8,17 @@
     <style>
     #main{
         display:grid;
-        grid-template-columns: 30% 30% 30%;
+        grid-template-columns: 20% 20% 20% 20%;
       
-        grid-gap: 7%;
+        grid-gap:5%;
     }
     #main div{
         display: flex;
         flex-direction: column;
+        align-items:center;
     }
     #imgg{
-        width:30%;
+        width:45%;
     }
     </style>
 </head>
@@ -36,6 +37,11 @@
     url:"https://staticimg.titan.co.in/Mia/Catalog/552818CDSAE00_1.jpg"
     },
     {
+    name:"c2",
+    price:"22000",
+    url:"https://staticimg.titan.co.in/Mia/Catalog/A12821CRPAA00_1.jpg"
+    },
+    {
     name:"earrings",
     price:"17000",
     url:"https://staticimg.titan.co.in/Mia/Catalog/552812DSPAAAPL_2.jpg"
@@ -46,19 +52,40 @@
 
 
     var prr=JSON.parse(localStorage.getItem("cat_pro"));
+   var main_d=document.createElement('div');
     prr.forEach(element => {
-       var div=document.createElement('div');
+        var div=document.createElement('div');
        div.setAttribute('id',"main");
        var n=document.createElement('p');
        var p=document.createElement('p');
        var i=document.createElement('img');
+       var btt=document.createElement('button');
+       btt.innerHTML="ADD to cart";
+       btt.onclick=function(){
+      
+             addtocart(element);
+            
+       }
        n.innerHTML=element.name;
        p.innerHTML=element.price;
-       i.setAttribute('id',imgg);
+       i.setAttribute('id',"imgg");
        i.setAttribute("src",element.url);
-       div.append(i,n,p);
-        document.body.appendChild(div);
+       div.append(i,n,p,btt);
+      document.body.appendChild(div);
     });
+
+   
+   var cartitems=JSON.parse(localStorage.getItem("cart_it"));
+   if(localStorage.getItem("cart_it")==null){
+       var cartitems=[];
+   }
+
+    function addtocart(element){
+
+      cartitems.push(element);
+      console.log(cartitems);
+      localStorage.setItem("cart_it",JSON.stringify(cartitems));
+    }
 </script>
 </body>
 </html>
