@@ -1,6 +1,8 @@
 function sidebar(){
     return ` <div id=sidebar>
-    <img src="https://techcrunch.com/">
+    
+
+   
     <div>
     <h3 id="y"><a>Join Extra Crunch</a></h3>
     <h3><a>Login</a></h3>
