@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        #sidebar{
+            display:flex;
+            min-height: 300px;
+            min-width:100px;
+        }
+        #y{
+            color:rgb(255, 251, 0);
+        }
+    </style>
+</head>
+<body>
+    <div id="side"></div>
+    <div id="searchbar">
+        <input type="text" id="query" placeholder="search here">
+        <input type="button" onclick="search_implementation()">
+    </div>
+    <script type="module">
+
+
+        import sidebar from "./../components/sidebar.js";
+        let side_bar=document.getElementById('side');
+        side_bar.innerHTML=sidebar();
+    </script>
+    <script>
+        var search_value=document.getElementById('query').value;
+       async function search_implementation(){
+           
+       }
+       
+    </script>
+
+</body>
+</html>

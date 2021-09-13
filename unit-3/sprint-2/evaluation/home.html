@@ -18,6 +18,7 @@
 </head>
 <body>
     <div id="side"></div>
+    <div id="top_story"></div>
     <div id="latest"></div>
 <script type="module">
 
@@ -33,8 +34,16 @@
         console.log("data",data.articles);
         display_top(data.articles);
     } 
+    function display_top_story(article){
+  var top_div=document.getElementById('top_story');
+  var title=document.createElement('p');
+  title.innerHTML=article;
+  top_div.appendChild(title);
+
+    }
+
 function display_top(article){
-    main_latest=document.getElementById('latest');
+    var main_latest=document.getElementById('latest');
 article.forEach(({title,urlToImage,description})=>{
     var t=document.createElement('div');
     var tit=document.createElement('p');
@@ -51,6 +60,7 @@ article.forEach(({title,urlToImage,description})=>{
 }
 
     latest_part();
+    display_top_story();
 </script>
 
 </body>
