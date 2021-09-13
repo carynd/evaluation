@@ -28,10 +28,10 @@
 <body>
   
     <header id="side"></header>
-    <div id="main">
+   
     <div id="top_story"></div>
     <div id="latest"></div>
-</div>
+
 <script type="module">
 
 
@@ -53,22 +53,36 @@
         
         console.log("data",tdata.articles);
         display_top_story(tdata.articles);
+       
 
     }
     function display_top_story(article){
+        console.log(article);
+        var top_div=document.getElementById('top_story');
+        article.forEach(({title,urlToImage,description})=>{
+            console.log(title);
+    var titl=document.createElement('p');
+     var desc=document.createElement('p');
+    var image_top=document.createElement('img');
+    image_top.src=`${urlToImage}`; 
+    titl.innerHTML=`${title}`;
+    desc.innerHTML=`${description}`; 
+    top_div.append(titl,image_top,desc);
+});
       //  console.log("data",articles);
         
        // console.log("data",articles[6]);
-  var top_div=document.getElementById('top_story');
-  var title=document.createElement('p');
-  title.innerHTML=article.title;
-  top_div.appendChild(title);
  
+ 
+ 
+    
     }
-
+   
 function display_top(article){
+    console.log("%");
     var main_latest=document.getElementById('latest');
 article.forEach(({title,urlToImage,description})=>{
+    console.log("%");
     var t=document.createElement('div');
     var tit=document.createElement('p');
     var des=document.createElement('p');
@@ -83,7 +97,7 @@ article.forEach(({title,urlToImage,description})=>{
 
 }
 latest_top_part()
-    latest_part();
+latest_part();
    
 </script>
 
