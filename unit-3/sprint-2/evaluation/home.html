@@ -23,6 +23,22 @@
             position: sticky;
             left:10px;
         }
+        #top_story{
+           
+            min-height: 900px;
+            min-width:900px;
+        }
+        #i{
+            height:200px;
+            width:300px;
+
+        }
+    
+        #it{
+            height:200px;
+            width:300px;
+            
+        }
     </style>
 </head>
 <body>
@@ -64,6 +80,7 @@
     var titl=document.createElement('p');
      var desc=document.createElement('p');
     var image_top=document.createElement('img');
+    image_top.setAttribute('src',"it");
     image_top.src=`${urlToImage}`; 
     titl.innerHTML=`${title}`;
     desc.innerHTML=`${description}`; 
@@ -87,6 +104,7 @@ article.forEach(({title,urlToImage,description})=>{
     var tit=document.createElement('p');
     var des=document.createElement('p');
     var image=document.createElement('img');
+    image.setAttribute('src',"i");
     image.src=`${urlToImage}`;
     tit.innerHTML=`${title}`;
     des.innerHTML=`${description}`;

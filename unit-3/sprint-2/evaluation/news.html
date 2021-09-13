@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        #main{
+            display: flex;
+         
+        }
+        #sidebar{
+            display:flex;
+            min-height: 300px;
+            min-width:100px;
+          
+        }
+        #y{
+            color:rgb(255, 251, 0);
+        }
+        #side{
+            position: sticky;
+            left:10px;
+        }
+        #top_story{
+           
+            min-height: 900px;
+            min-width:900px;
+        }
+        #i{
+            height:200px;
+            width:300px;
+
+        }
+    
+        #it{
+            height:200px;
+            width:300px;
+            
+        }
+    </style>
+</head>
+<body>
+  
+    <header id="side"></header>
+   
+    <div id="top_story"></div>
+    <div id="latest"></div>
+
+<script type="module">
+
+
+    import sidebar from "./../components/sidebar.js";
+    let side_bar=document.getElementById('side');
+    side_bar.innerHTML=sidebar();
+</script>
+</body>
+</html>
