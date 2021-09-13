@@ -18,6 +18,7 @@
 </head>
 <body>
     <div id="side"></div>
+    <div id="latest"></div>
 <script type="module">
 
 
@@ -27,10 +28,29 @@
 </script>
 <script>
     async function latest_part(){
-        let d=await fetch(``);
+        let d=await fetch(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=1ce1a0bd9e6c4385862899d4f5e3d241`);
         let data=await d.json();
-        console.log("data",data);
+        console.log("data",data.articles);
+        display_top(data.articles);
     } 
+function display_top(article){
+    main_latest=document.getElementById('latest');
+article.forEach(({title,urlToImage,description})=>{
+    var t=document.createElement('div');
+    var tit=document.createElement('p');
+    var des=document.createElement('p');
+    var image=document.createElement('img');
+    image.src=`${urlToImage}`;
+    tit.innerHTML=`${title}`;
+    des.innerHTML=`${description}`;
+    t.append(tit,image,des);
+    main_latest.appendChild(t);
+});
+   
+
+}
+
+    latest_part();
 </script>
 
 </body>
