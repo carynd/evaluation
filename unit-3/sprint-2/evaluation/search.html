@@ -10,6 +10,8 @@
             display:flex;
             min-height: 300px;
             min-width:100px;
+            position: sticky;
+            left:10px;
         }
         #y{
             color:rgb(255, 251, 0);
@@ -32,9 +34,10 @@
         side_bar.innerHTML=sidebar();
     </script>
     <script>
-        var search_value=document.getElementById('query').value;
+       
        async function search_implementation(){
-        
+        var search_value=document.getElementById('query').value;
+        console.log(search_value);
            var dd=await fetch(`https://newsapi.org/v2/top-headlines?q=${search_value}&apiKey=1ce1a0bd9e6c4385862899d4f5e3d241`);
            var sd=await dd.json();
            console.log("searc res;",sd);

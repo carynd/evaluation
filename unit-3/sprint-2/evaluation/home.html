@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
     <style>
+        #main{
+            display: flex;
+        }
         #sidebar{
             display:flex;
             min-height: 300px;
             min-width:100px;
+            position: sticky;
+            left:10px;
         }
         #y{
             color:rgb(255, 251, 0);
@@ -17,9 +22,12 @@
     </style>
 </head>
 <body>
+    <div id="main">
     <div id="side"></div>
+  
     <div id="top_story"></div>
     <div id="latest"></div>
+</div>
 <script type="module">
 
 
