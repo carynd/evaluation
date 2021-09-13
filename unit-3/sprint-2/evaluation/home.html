@@ -5,13 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
+    <style>
+        #sidebar{
+            display:flex;
+            min-height: 300px;
+            min-width:100px;
+        }
+        #y{
+            color:rgb(255, 251, 0);
+        }
+    </style>
 </head>
 <body>
-    <script type="module">
+    <div id="side"></div>
+<script type="module">
 
 
-        import sidebar from "./../components/sidebar.js";
+    import sidebar from "./../components/sidebar.js";
+    let side_bar=document.getElementById('side');
+    side_bar.innerHTML=sidebar();
+</script>
+<script>
+    async function latest_part(){
+        let d=await fetch(``);
+        let data=await d.json();
+        console.log("data",data);
+    } 
+</script>
 
-    </script>
 </body>
 </html>
