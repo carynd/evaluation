@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+    <title>Search results page</title>
     <style>
         #sidebar{
             display:flex;
@@ -22,10 +22,13 @@
     <div id="side"></div>
 
     <div id="searchbar">
-        <div id="latest"></div>
+
+        
+        
         <input type="text" id="query" placeholder="search here">
         <input type="button" onclick="search_implementation()">
     </div>
+    <div id="latest"></div>
     <script type="module">
 
 
@@ -45,6 +48,7 @@
        }
        function display_top(article){
     var main_latest=document.getElementById('latest');
+    main_latest.innerHTML=null;
 article.forEach(({title,urlToImage,description})=>{
     var t=document.createElement('div');
     var tit=document.createElement('p');

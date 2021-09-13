@@ -75,6 +75,7 @@
     function display_top_story(article){
         console.log(article);
         var top_div=document.getElementById('top_story');
+      
         article.forEach(({title,urlToImage,description})=>{
             console.log(title);
     var titl=document.createElement('p');
@@ -85,6 +86,9 @@
     titl.innerHTML=`${title}`;
     desc.innerHTML=`${description}`; 
     top_div.append(titl,image_top,desc);
+    top_div.addEventListener('onclick',()=>{
+            window.location=("news.html");
+        });
 });
       //  console.log("data",articles);
         
