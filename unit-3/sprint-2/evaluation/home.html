@@ -8,23 +8,27 @@
     <style>
         #main{
             display: flex;
+         
         }
         #sidebar{
             display:flex;
             min-height: 300px;
             min-width:100px;
-            position: sticky;
-            left:10px;
+          
         }
         #y{
             color:rgb(255, 251, 0);
         }
+        #side{
+            position: sticky;
+            left:10px;
+        }
     </style>
 </head>
 <body>
-    <div id="main">
-    <div id="side"></div>
   
+    <header id="side"></header>
+    <div id="main">
     <div id="top_story"></div>
     <div id="latest"></div>
 </div>
@@ -40,14 +44,26 @@
         let d=await fetch(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=1ce1a0bd9e6c4385862899d4f5e3d241`);
         let data=await d.json();
         console.log("data",data.articles);
+       
         display_top(data.articles);
     } 
+    async function latest_top_part(){
+        let td=await fetch(`https://newsapi.org/v2/top-headlines?q=covid&sources=bbc-news&apiKey=1ce1a0bd9e6c4385862899d4f5e3d241`);
+        let tdata=await td.json();
+        
+        console.log("data",tdata.articles);
+        display_top_story(tdata.articles);
+
+    }
     function display_top_story(article){
+      //  console.log("data",articles);
+        
+       // console.log("data",articles[6]);
   var top_div=document.getElementById('top_story');
   var title=document.createElement('p');
-  title.innerHTML=article;
+  title.innerHTML=article.title;
   top_div.appendChild(title);
-
+ 
     }
 
 function display_top(article){
@@ -66,9 +82,9 @@ article.forEach(({title,urlToImage,description})=>{
    
 
 }
-
+latest_top_part()
     latest_part();
-    display_top_story();
+   
 </script>
 
 </body>
