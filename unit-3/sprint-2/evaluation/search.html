@@ -18,7 +18,9 @@
 </head>
 <body>
     <div id="side"></div>
+
     <div id="searchbar">
+        <div id="latest"></div>
         <input type="text" id="query" placeholder="search here">
         <input type="button" onclick="search_implementation()">
     </div>
@@ -32,9 +34,28 @@
     <script>
         var search_value=document.getElementById('query').value;
        async function search_implementation(){
-           
+        
+           var dd=await fetch(`https://newsapi.org/v2/top-headlines?q=${search_value}&apiKey=1ce1a0bd9e6c4385862899d4f5e3d241`);
+           var sd=await dd.json();
+           console.log("searc res;",sd);
+           var disp=display_top(sd.articles);
        }
-       
+       function display_top(article){
+    var main_latest=document.getElementById('latest');
+article.forEach(({title,urlToImage,description})=>{
+    var t=document.createElement('div');
+    var tit=document.createElement('p');
+    var des=document.createElement('p');
+    var image=document.createElement('img');
+    image.src=`${urlToImage}`;
+    tit.innerHTML=`${title}`;
+    des.innerHTML=`${description}`;
+    t.append(tit,image,des);
+    main_latest.appendChild(t);
+});
+   
+
+}
     </script>
 
 </body>
