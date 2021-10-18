@@ -19,5 +19,7 @@ import javax.persistence.OneToOne;
 @NoArgsConstructor
 public class email {
     @Id
-    private String
+    private String mail_id;
+    private String email;
+    private String created_date;
 }

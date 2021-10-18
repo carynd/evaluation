@@ -25,7 +25,7 @@ public class user {
      private Integer dob;
 
      @OneToOne
-    @JoinColumn(email="emailid")
-    private
+    @JoinColumn(email="mail_id")
+    private user User;
 
 }
