@@ -19,7 +19,7 @@ import javax.persistence.OneToOne;
 
 public class user {
      @Id
-    private Long id;
+    private String id;
      private String name;
      private Long photoNo;
      private Integer dob;
