@@ -3,7 +3,7 @@ function sidebar(){
     
 
    
-    <div>
+  
     <h3 id="y"><a>Join Extra Crunch</a></h3>
     <h3><a>Login</a></h3>
     <h3><a>search</a></h3>
@@ -17,7 +17,7 @@ function sidebar(){
     <h3><a>More</a></h3>
     </div>
    
-    </div>
+    
     `
 
 }

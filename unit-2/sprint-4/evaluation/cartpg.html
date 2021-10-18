@@ -23,12 +23,13 @@
     </style>
 </head>
 <body>
-<h1>Products </h1>
+<h1>cart page </h1>
 <form onsubmit="check()">
     <label>Code</label>
     <input type="text" id="code" placeholder="Enter code">
     <input type="submit">
 </form>
+<button onclick="checkout()">Proceed to checkout</button>
 <h3 id="tot"></h3>
 <h3 id="ntt"></h3>
     <script>
@@ -66,15 +67,21 @@ var total=0;
     
      }
     nt.innerHTML=total;
-    
+    alert("your total price="+total);
+    //window.location.replace("checkout.html");
  }
+  n.appendChild(nt);
+   var c=setInterval(check,5000);
+   clearInterval(c);
 
-   
  console.log(total);
     var t=document.getElementById("tot");
     var n=document.createElement('p');
     n.innerHTML="Total= "+total;
     t.appendChild(n);
+function checkout(){
+    window.location.replace("checkout.html");
+ }
 
    </script>
 </body>

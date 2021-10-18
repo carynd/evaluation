@@ -1,117 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home page</title>
     <style>
-        #main{
-            display: flex;
-         
-        }
-        #sidebar{
-            display:flex;
-            min-height: 300px;
-            min-width:100px;
-          
-        }
-        #y{
-            color:rgb(255, 251, 0);
-        }
-        #side{
-            position: sticky;
-            left:10px;
-        }
-      
-      
-    </style>
-</head>
-<body>
-  
-    <header id="side"></header>
-   <h1>top story</h1>
-    <div id="top_story"></div>
-</br>
-
-     
-    <div id="latest"> </div>
-
-<script type="module">
-
-
-    import sidebar from "./../components/sidebar.js";
-    let side_bar=document.getElementById('side');
-    side_bar.innerHTML=sidebar();
-</script>
-<script>
-    async function latest_part(){
-        let d=await fetch(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=1ce1a0bd9e6c4385862899d4f5e3d241`);
-        let data=await d.json();
-        console.log("data",data.articles);
-       
-        display_top(data.articles);
-    } 
-    async function latest_top_part(){
-        let td=await fetch(`https://newsapi.org/v2/top-headlines?q=covid&sources=bbc-news&apiKey=1ce1a0bd9e6c4385862899d4f5e3d241`);
-        let tdata=await td.json();
+      #main {
+        display: flex;
         
-        console.log("data",tdata.articles);
-        display_top_story(tdata.articles);
-       
-
-    }
-    function display_top_story(article){
-        console.log(article);
-        var top_div=document.getElementById('top_story');
-      
-        article.forEach(({title,urlToImage,description})=>{
-            console.log(title);
-    var titl=document.createElement('p');
-     var desc=document.createElement('p');
-    var image_top=document.createElement('img');
-    image_top.setAttribute('src',"it");
-    image_top.src=`${urlToImage}`; 
-    titl.innerHTML=`${title}`;
-    desc.innerHTML=`${description}`; 
-    top_div.append(titl,image_top,desc);
-    top_div.addEventListener('onclick',()=>{
-        console.log("p");
-            window.location=("./news.html");
-        });
-});
-      //  console.log("data",articles);
-        
-       // console.log("data",articles[6]);
- 
- 
- 
+      }
+      #sidebar {
+        position: sticky;
+    position: -webkit-sticky;
     
-    }
+        height: 100%;
+        min-width: 100px;
+      
+        position: sticky;
+         left: 0;
+      }
+      #y {
+        color: rgb(255, 251, 0);
+      }
+      #side {
+        position: sticky;
+    position: -webkit-sticky;
    
-function display_top(article){
-    console.log("%");
-    var main_latest=document.getElementById('latest');
-article.forEach(({title,urlToImage,description})=>{
-    console.log("%");
-    var t=document.createElement('div');
-    var tit=document.createElement('p');
-    var des=document.createElement('p');
-    var image=document.createElement('img');
-    image.setAttribute('src',"i");
-    image.src=`${urlToImage}`;
-    tit.innerHTML=`${title}`;
-    des.innerHTML=`${description}`;
-    t.append(tit,image,des);
-    main_latest.appendChild(t);
-});
-   
+        position: sticky;
+         left: 0;
+      }
+      #top-story{
+        display: flex;
+       
+      }
+    </style>
+  </head>
+  <body>
+      <div id="main">
+    <div id="side"></div>
 
-}
-latest_top_part()
-latest_part();
-   
-</script>
+    <div id="top_story"></div>
 
-</body>
+    <!-- <div id="latest"></div> -->
+</div>
+    <script type="module">
+      import sidebar from "./../components/sidebar.js";
+      let side_bar = document.getElementById("side");
+      side_bar.innerHTML = sidebar();
+    </script>
+    <script>
+      async function latest_part() {
+        let d = await fetch(
+          `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=1ce1a0bd9e6c4385862899d4f5e3d241`
+        );
+        let data = await d.json();
+        console.log("data", data.articles);
+
+        display_top(data.articles);
+      }
+      async function latest_top_part() {
+        let td = await fetch(
+          `https://newsapi.org/v2/top-headlines?q=covid&sources=bbc-news&apiKey=1ce1a0bd9e6c4385862899d4f5e3d241`
+        );
+        let tdata = await td.json();
+
+        console.log("data", tdata.articles);
+        display_top_story(tdata.articles);
+      }
+      function display_top_story(article) {
+        console.log(article);
+        console.log("p");
+        var top_div = document.getElementById("top_story");
+
+        article.forEach(({ title, urlToImage, description }) => {
+          console.log(title);
+          var titl = document.createElement("p");
+          var desc = document.createElement("p");
+          var image_top = document.createElement("img");
+          image_top.setAttribute("src", "it");
+          image_top.src = `${urlToImage}`;
+          titl.innerHTML = `${title}`;
+          desc.innerHTML = `${description}`;
+          top_div.append(titl, image_top, desc);
+          //   image_top.addEventListener('onclick','mygo_to()');
+        });
+        //  console.log("data",articles);
+
+        // console.log("data",articles[6]);
+      }
+      function mygo_to() {
+        console.log("p");
+        window.location = "./news.html";
+      }
+
+      function display_top(article) {
+        console.log("%");
+        var main_latest = document.getElementById("latest");
+        article.forEach(({ title, urlToImage, description }) => {
+          console.log("%");
+          var t = document.createElement("div");
+          var tit = document.createElement("p");
+          var des = document.createElement("p");
+          var image = document.createElement("img");
+          image.setAttribute("src", "i");
+          image.src = `${urlToImage}`;
+          tit.innerHTML = `${title}`;
+          des.innerHTML = `${description}`;
+          t.append(tit, image, des);
+          main_latest.appendChild(t);
+        });
+      }
+      latest_top_part();
+      latest_part();
+    </script>
+  </body>
 </html>

@@ -9,12 +9,30 @@
 </head>
 <body>
 <h1>payemnt</h1>
-<form onsubmit="check()">
+<form onsubmit="pl_order()">
     <label>Debit card no</label>
-    <input type="text" id="card" placeholder="Enter card no.">
+    <input type="text" id="cardno" placeholder="Enter card no.">
     <label>Debit card password</label>
     <input type="text" id="pw" placeholder="Enter card password.">
-    <input type="submit">
+    <input type="submit" placeholder="place order">
 </form>
+<script>
+    function pl_order(){
+        user_d={
+            no:document.getElementById('cardno').value,
+            pww:document.getElementById('pw').value,
+        }
+         localStorage.setItem("usr_card",JSON.stringify(user_d));
+           conf();
+    }
+    function conf(){
+        alert("Your order has been placed");
+
+    }
+    var d=setInterval(pl_order,20000);
+    var c=setInterval(conf,3000);
+    clearInterval(c);
+    clearInterval(d);
+</script>
 </body>
 </html>
