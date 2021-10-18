@@ -22,4 +22,28 @@ public class email {
     private String mail_id;
     private String email;
     private String created_date;
+
+    public String getMail_id() {
+        return mail_id;
+    }
+
+    public void setMail_id(String mail_id) {
+        this.mail_id = mail_id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCreated_date() {
+        return created_date;
+    }
+
+    public void setCreated_date(String created_date) {
+        this.created_date = created_date;
+    }
 }

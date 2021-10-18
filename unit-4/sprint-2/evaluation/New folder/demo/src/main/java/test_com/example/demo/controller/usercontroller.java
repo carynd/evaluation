@@ -39,19 +39,20 @@ public class usercontroller {
         String user2 = UserService.deluserbyid(userid);
         return user2;
     }
+/*
     @GetMapping("/user/{id}/mail/{mail_id}")
     public List<user> getemailofuser(@PathVariable("id") String userid,@PathVariable("mail_id") String mail_id){
         List<user> details=UserService.getemailofuser(userid,mail_id);
         return details;
 
     }
-    /*
+
     @PostMapping("/user/{id}/mail")
     public email addemail(@RequestBody email Email){
         email email1=UserService.addemail(Email);
         return email1;
     }
-*/
 
+*/
 }
 

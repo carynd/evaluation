@@ -17,10 +17,12 @@ public class emailcontroller {
     @Autowired
     emailservice EmailService;
 
-
+/*
     @PostMapping("/mail")
     public email addemail(@RequestBody email Email){
         email email1=EmailService.addemail(Email);
         return email1;
     }
+
+ */
 }

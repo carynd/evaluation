@@ -14,9 +14,11 @@ public class emailservice {
     @Autowired
     emailrepository Emailrepository;
 
-
+/*
     public email addemail(email Email) {
         email email1=Emailrepository.save(Email);
         return email1;
     }
+
+ */
 }

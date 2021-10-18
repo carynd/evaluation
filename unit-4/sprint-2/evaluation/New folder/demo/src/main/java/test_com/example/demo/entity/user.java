@@ -6,26 +6,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Table (uniqueConstraints = {@UniqueConstraint(columnNames = {"mail_id"})})
 public class user {
      @Id
     private String id;
      private String name;
-     private Long photoNo;
-     private Integer dob;
+     private String photoNo;
+     private String dob;
 
      @OneToOne
-    @JoinColumn(email="mail_id")
+    @JoinColumn(name ="mail_id")
     private user User;
 
+
+
 }
+//INSERT INTO EMAIL(ID,DOB,NAME,PHOTO_NO,MAIL_ID)
+//VALUES("1213",1,"DED",12434,"1");
